@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
-import Banner from '../partials/Banner';
 
 function SignUp() {
   return (
@@ -93,8 +92,6 @@ function SignUp() {
         </section>
 
       </main>
-
-      <Banner />
 
     </div>
   );
