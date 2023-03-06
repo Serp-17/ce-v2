@@ -2,7 +2,8 @@ import React from 'react';
 
 import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
-import HeroHome from '../partials/HeroHome';
+import ExchangeForm from '../partials/ExchangeForm';
+import FeaturesTitleBlocks from '../partials/FeaturesTitleBlocks';
 import FeaturesBlocks from '../partials/FeaturesBlocks';
 import FeaturesZigZag from '../partials/FeaturesZigzag';
 import Testimonials from '../partials/Testimonials';
@@ -23,7 +24,10 @@ function Home() {
         </div>
 
         {/*  Page sections */}
-        <HeroHome />
+        <div className="h-screen">
+          <FeaturesTitleBlocks />
+          <ExchangeForm />
+        </div>
         <FeaturesBlocks />
         <FeaturesZigZag />
         <Testimonials />
