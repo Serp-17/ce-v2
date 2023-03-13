@@ -4,20 +4,25 @@ import {
   Route,
   useLocation
 } from 'react-router-dom';
-
 import 'aos/dist/aos.css';
 import './css/style.css';
-
 import AOS from 'aos';
-
+import i18n from './i18n';
+import useLocalStorage from './hooks/useLocalStorage';
+import 'react-toastify/dist/ReactToastify.css';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import ResetPassword from './pages/ResetPassword';
+import Check from './pages/Сheck';
 
 function App() {
-
   const location = useLocation();
+  const [language, setLanguage] = useLocalStorage('language', 'ru');
+  const handleLanguageChange = (val) => {
+    i18n.changeLanguage(val);
+    setLanguage(val);
+  };
 
   useEffect(() => {
     AOS.init({
@@ -38,6 +43,7 @@ function App() {
     <>
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route path="/check" element={<Check />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/reset-password" element={<ResetPassword />} />

@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Dropdown from '../utils/Dropdown';
+import { useTranslation } from 'react-i18next';
+import {ToastContainer} from 'react-toastify';
 
 function Header() {
-
+  const { t } = useTranslation();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
-
   const trigger = useRef(null);
   const mobileNav = useRef(null);
 
@@ -51,10 +51,10 @@ function Header() {
             {/* Desktop sign in links */}
             <ul className="flex grow justify-end flex-wrap items-center">
               <li>
-                <Link to="/signin" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out">Sign in</Link>
+                <Link to="/signin" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out">{t("Sign in")}</Link>
               </li>
               <li>
-                <Link to="/signup" className="btn-sm text-white bg-purple-600 hover:bg-purple-700 ml-3">Sign up</Link>
+                <Link to="/signup" className="btn-sm text-white bg-purple-600 hover:bg-purple-700 ml-3">{t("Sign up")}</Link>
               </li>
             </ul>
 
@@ -89,6 +89,7 @@ function Header() {
 
         </div>
       </div>
+      <ToastContainer />
     </header>
   );
 }

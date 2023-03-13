@@ -15,15 +15,17 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase();
 
-export const postData = (data) => {
-    console.log(data)
-    set(ref(db, 'lead/' + new Date().getTime()), {
+export const postData = async(data) => {
+    const id = new Date().getTime();
+    set(ref(db, 'lead/' + id), {
         send: `${data.send} ${data.sendCoin}`,
         get: `${data.get} ${data.getCoin}`,
         email: data.email,
         getWallet: data.getWallet,
         sendWallet: data.sendWallet,
         commission: data.commission || 0,
-        promoCode: data.promoCode
+        promoCode: data.promoCode,
+        status: "Awaiting payment"
     });
+    return id;
 }
