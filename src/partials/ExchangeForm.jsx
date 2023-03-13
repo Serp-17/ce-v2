@@ -10,7 +10,6 @@ import {coins} from '../data/coins';
 import {toast} from 'react-toastify';
 import SuccessBlock from "./SuccessBlock";
 
-
 const ExchangeForm = observer(() => {
     const {t} = useTranslation();
     const [step, setStep] = useState(1);
@@ -27,6 +26,23 @@ const ExchangeForm = observer(() => {
     useEffect(()=> {
         coinsData.fetchCoins();
     }, [])
+
+    const onBlur = (e) => {
+        const {name, value} = e.target;
+        const sendCoin = getValues("sendCoin");
+        const getCoin = getValues("getCoin");
+        const getPrice = coinsData.coins.find(c => c.name === getCoin).price;
+        const sendPrice = coinsData.coins.find(c => c.name === sendCoin).price;
+
+        if (name === "send") {
+            const val = ((sendPrice * value) / getPrice);
+            setValue("get", val.toFixed(5));
+        }
+        if (name === "get") {
+            const val = ((getPrice * value) / sendPrice);
+            setValue("send", val.toFixed(5));
+        }
+    }
 
     const onSubmit = (data) => {
         if (step === 1 && data.send && data.get && data.sendCoin && data.getCoin) {
@@ -72,6 +88,7 @@ const ExchangeForm = observer(() => {
                                             placeholder="You send"
                                             name="send"
                                             register={register}
+                                            onBlur={onBlur}
                                             // label="You send"
                                         />
                                         <Controller
@@ -97,6 +114,7 @@ const ExchangeForm = observer(() => {
                                             placeholder="You get"
                                             name="get"
                                             register={register}
+                                            onBlur={onBlur}
                                             // label="You get"
                                         />
                                         <Controller

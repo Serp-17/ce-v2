@@ -9,7 +9,7 @@ class Coins {
 
     fetchCoins() {
         getCoins().then((data) => {
-            const coins = data.Data.map((coin) => {
+            this.coins = data.Data.map((coin) => {
                 const obj = {
                     name: coin.CoinInfo.Name,
                     fullName: coin.CoinInfo.FullName,
@@ -18,7 +18,7 @@ class Coins {
                     price: coin.RAW.USD.PRICE,
                     volume24Hour: parseInt(coin.RAW.USD.VOLUME24HOUR),
                 };
-                this.coins = obj;
+                return obj;
             });
         })
     }

@@ -7,17 +7,25 @@ const Input = ({
     type,
     required,
     disabled,
-    label
-}) =>  (
+    label,
+    onBlur
+}) => (
     <div className="form-control-input w-full">
         {label && <label htmlFor="">{label}</label>}
         <input
               name={name}
-              type={type}
+              type="text"
               disabled={disabled}
-              onBlur={(e) => console.log(e)}
               className="w-full appearance-none bg-purple-700 border border-purple-500 focus:border-purple-300 rounded-sm px-4 py-3 text-white placeholder-purple-400"
-              {...register(name)}
+              {...register(name, {
+                  onChange: (e) => {
+                      const {value} = e.target;
+                      if (type === "number") {
+                          e.target.value = value.replace(/[^0-9.]/, '')
+                      }
+                  },
+                  onBlur: (e) => onBlur(e),
+              })}
         />
         {errors && errors[name]?.type === "required" && (
             <span className="error">{errors[name]?.message}</span>

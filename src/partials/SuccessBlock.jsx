@@ -1,5 +1,6 @@
 import React from 'react';
 import {useTranslation} from 'react-i18next';
+import {Link} from 'react-router-dom';
 
 const SuccessBlock = ({id}) => {
     const {t} = useTranslation();
@@ -10,7 +11,9 @@ const SuccessBlock = ({id}) => {
                 {t("Your track number:")} <span className="text-white">{id}</span>
             </p>
             <p className="text-xl text-gray-400 underline cursor-pointer mt-4">
-                {t("Track status")}
+                <Link to="/check">
+                    {t("Track status")}
+                </Link>
             </p>
         </div>
     )

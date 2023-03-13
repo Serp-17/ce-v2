@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
 import ExchangeForm from '../partials/ExchangeForm';
