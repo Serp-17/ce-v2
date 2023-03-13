@@ -8,7 +8,7 @@ import Input from '../components/Input';
 import coinsData from '../store/coins';
 import {coins} from '../data/coins';
 import {toast} from 'react-toastify';
-import SuccessBlock from "./SuccessBlock";
+import SuccessBlock from './SuccessBlock';
 
 const ExchangeForm = observer(() => {
     const {t} = useTranslation();
