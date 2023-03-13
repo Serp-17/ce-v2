@@ -13,6 +13,7 @@ import SuccessBlock from "./SuccessBlock";
 const ExchangeForm = observer(() => {
     const {t} = useTranslation();
     const [step, setStep] = useState(1);
+    const [id, setId] = useState(null);
     const {
         register,
         handleSubmit,
@@ -50,7 +51,8 @@ const ExchangeForm = observer(() => {
             return
         }
         if (step === 2) {
-            postData(data).then(() => {
+            postData(data).then((id) => {
+                setId(id);
                 toast("Send");
                 setStep(3);
             });
@@ -187,13 +189,10 @@ const ExchangeForm = observer(() => {
                                 </>
                             )}
 
-                            {step === 3 && <SuccessBlock id={12312312312}/>}
+                            {step === 3 && <SuccessBlock id={id}/>}
                         </form>
-
                     </div>
-
                 </div>
-
             </div>
         </section>
     );
