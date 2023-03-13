@@ -30,7 +30,6 @@ function CustomSelect (props) {
         }),
       }}
       // components={{ DropdownIndicator:() => null, IndicatorSeparator:() => null }}
-      defaultValue={defaultVal ?  options.find(item => item.value === defaultVal) : null}
     />
   )
 }

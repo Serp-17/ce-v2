@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from 'react';
+import {observer} from 'mobx-react-lite';
 import {useForm, Controller} from 'react-hook-form';
-import {getCoins} from '../api/coins';
+import {postData} from '../api/firebase';
 import CustomSelect from '../components/Select';
 import Input from '../components/Input';
+import coins from '../store/coins';
 
-function ExchangeForm() {
-    const [coins, setCoins] = useState([]);
+const ExchangeForm = observer(() => {
+    const [step, setStep] = useState(1);
     const {
         register,
         handleSubmit,
@@ -13,32 +15,21 @@ function ExchangeForm() {
         control,
         formState: { errors },
         setValue,
+        getValues,
     } = useForm();
 
     useEffect(()=> {
-        getCoins().then((data) => {
-            const coins = data.Data.map((coin) => {
-                const obj = {
-                    name: coin.CoinInfo.Name,
-                    fullName: coin.CoinInfo.FullName,
-                    imageUrl: `https://www.cryptocompare.com/${coin.CoinInfo.ImageUrl}`,
-                    price: coin.RAW.USD.PRICE.toFixed(3),
-                    volume24Hour: parseInt(coin.RAW.USD.VOLUME24HOUR),
-                };
-                return obj;
-            });
-            if (coins.length) {
-              const data = coins.map((item) => ({
-                label: item.name,
-                name: item.name
-              }))
-              setCoins(data);
-            }
-        })
+        coins.fetchCoins();
     }, [])
-
+    console.log(coins.coins[0])
     const onSubmit = (data) => {
-        console.log(data)
+        if (step === 1 && data.send && data.get && data.sendCoin && data.getCoin) {
+            setStep(2);
+            return
+        }
+        if (step === 2) {
+            postData(data);
+        }
     };
 
     return (
@@ -64,60 +55,109 @@ function ExchangeForm() {
                     <div className="relative flex flex-col lg:flex-row justify-between items-center">
                         {/* CTA form */}
                         <form className="w-full mx-auto" onSubmit={handleSubmit(onSubmit)}>
-                            <div className="flex flex-col sm:flex-row justify-center max-w-xs mx-auto sm:max-w-md lg:max-w-none mx-auto">
+                            <div className="flex flex-col sm:flex-row justify-center max-w-xs mx-auto sm:max-w-md lg:max-w-none mx-auto mb-3">
                                 <div className="flex mb-2 sm:mb-0 mr-0 sm:mr-2">
-                                  <Input
-                                    type="text"
-                                    placeholder="You send"
-                                    name="send"
-                                    register={register}
-                                  />
+                                    <Input
+                                        type="number"
+                                        placeholder="You send"
+                                        name="send"
+                                        register={register}
 
-                                  <Controller
-                                    control={control}
-                                    defaultValue={null}
-                                    name="sendCoin"
-                                    render={({ field: { onChange, value, name, ref } }) => {
-                                      return (
-                                        <CustomSelect
-                                          inputRef={ref}
-                                          options={coins}
-                                          name={name}
-                                          value={coins.find(c => c.value === value)}
-                                          handleChange={onChange}
-                                        />
-                                      )
-                                    }}
-                                  />
+                                        // label="You send"
+                                    />
+                                    <Controller
+                                        control={control}
+                                        defaultValue="BTC"
+                                        name="sendCoin"
+                                        render={({ field: { onChange, value, name, ref } }) => {
+                                          return (
+                                            <CustomSelect
+                                              inputRef={ref}
+                                              options={coins.coins}
+                                              name={name}
+                                              value={coins.coins.find(c => c.value === value)}
+                                              handleChange={onChange}
+                                            />
+                                          )
+                                        }}
+                                    />
                                 </div>
-
                                 <div className="flex mb-2 sm:mb-0 mr-0 sm:mr-2">
-                                  <Input
-                                    type="text"
-                                    placeholder="You get"
-                                    name="get"
-                                    register={register}
-                                  />
-                                  <Controller
-                                    control={control}
-                                    defaultValue={null}
-                                    name="getCoin"
-                                    render={({ field: { onChange, value, name, ref } }) => {
-                                      return (
-                                        <CustomSelect
-                                          inputRef={ref}
-                                          options={coins}
-                                          name={name}
-                                          value={coins.find(c => c.value === value)}
-                                          handleChange={onChange}
-                                        />
-                                      )
-                                    }}
-                                  />
+                                    <Input
+                                        type="number"
+                                        placeholder="You get"
+                                        name="get"
+                                        register={register}
+                                        // label="You get"
+                                    />
+                                    <Controller
+                                        control={control}
+                                        defaultValue={null}
+                                        name="getCoin"
+                                        render={({ field: { onChange, value, name, ref } }) => {
+                                          return (
+                                            <CustomSelect
+                                              inputRef={ref}
+                                              options={coins.coins}
+                                              name={name}
+                                              value={coins.coins.find(c => c.value === value)}
+                                              handleChange={onChange}
+                                            />
+                                          )
+                                        }}
+                                    />
                                 </div>
-
-                                <button type="submit" className="btn text-purple-600 bg-purple-100 hover:bg-white shadow">Subscribe</button>
+                                {step === 1 && <button type="submit" className="btn text-purple-600 bg-purple-100 hover:bg-white shadow">Buy</button>}
                             </div>
+
+                            {step !== 1 && (
+                                <>
+                                    <div className="flex flex-col sm:flex-row justify-center max-w-xs mx-auto sm:max-w-md lg:max-w-none mx-auto mb-3">
+                                        <div className="flex mb-2 sm:mb-0 mr-0 sm:mr-2 max-w-[314px] w-full">
+                                            <Input
+                                                type="text"
+                                                placeholder=""
+                                                name="getWallet"
+                                                register={register}
+                                                label={`Your ${getValues("sendCoin")} wallet`}
+                                            />
+                                        </div>
+                                        <div className="flex mb-2 sm:mb-0 mr-0 sm:mr-2 max-w-[314px] w-full">
+                                            <Input
+                                                type="text"
+                                                placeholder=""
+                                                name="sendWallet"
+                                                register={register}
+                                                label={`Your ${getValues("getCoin")} wallet`}
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="flex flex-col sm:flex-row justify-center max-w-xs mx-auto sm:max-w-md lg:max-w-none mx-auto">
+                                        <div className="flex mb-2 sm:mb-0 mr-0 sm:mr-2 max-w-[314px] w-full">
+                                            <Input
+                                                type="text"
+                                                placeholder="name@gail.com"
+                                                name="email"
+                                                register={register}
+                                                label="Your E-mail"
+                                            />
+                                        </div>
+                                        <div className="flex mb-2 sm:mb-0 mr-0 sm:mr-2 max-w-[314px] w-full">
+                                            <Input
+                                                type="text"
+                                                placeholder=""
+                                                name="promoCode"
+                                                register={register}
+                                                label="Promo code"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-col sm:flex-row justify-center max-w-xs mx-auto sm:max-w-md lg:max-w-none mx-auto mt-3">
+                                        <button type="submit" className="btn text-purple-600 bg-purple-100 hover:bg-white shadow">Send</button>
+                                    </div>
+                                </>
+                            )}
                         </form>
 
                     </div>
@@ -127,6 +167,6 @@ function ExchangeForm() {
             </div>
         </section>
     );
-}
+})
 
 export default ExchangeForm;
