@@ -32,11 +32,11 @@ export const postData = async(data) => {
 }
 
 export const checkId = async (id) => {
-    get(child(dbRef, `lead/${id}`)).then((snapshot) => {
+    return get(child(dbRef, `lead/${id}`)).then((snapshot) => {
         if (snapshot.exists()) {
-            console.log(snapshot.val());
+            return snapshot.val()
         } else {
-            console.log("No data available");
+            return "No data available";
         }
     }).catch((error) => {
         console.error(error);

@@ -20,5 +20,13 @@
   "Your track number:": "Ваш трек номер:",
   "Success": "Успешно",
   "Track status": "Отследить",
-  "Check": "Отследить"
+  "Check": "Отследить",
+  "Status": "Статус",
+  "Info": "Информация",
+  "Sender's wallet": "Кошелёк отправителя",
+  "Recipient's wallet": "Кошелёк получателя",
+  "Email": "Почта",
+  "to": "в",
+  "Information for": "Информация к",
+  "No data available": "Данные не доступны"
 }
