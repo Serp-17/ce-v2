@@ -1,10 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import React, {useState, useRef, useEffect} from 'react';
+import {Link} from 'react-router-dom';
+import {useTranslation} from 'react-i18next';
 import {ToastContainer} from 'react-toastify';
+import ChangeLanguage from "../components/ChangeLanguage";
 
 function Header() {
-  const { t } = useTranslation();
+  const {t} = useTranslation();
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const trigger = useRef(null);
   const mobileNav = useRef(null);
@@ -50,6 +51,30 @@ function Header() {
 
             {/* Desktop sign in links */}
             <ul className="flex grow justify-end flex-wrap items-center">
+              <li>
+                <ChangeLanguage />
+              </li>
+              <li>
+                <Link to="/check">
+                  <span className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out">
+                    {t("Rules")}
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/check">
+                  <span className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out">
+                    {t("Contact")}
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/check">
+                  <span className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out">
+                    {t("Check")}
+                  </span>
+                </Link>
+              </li>
               <li>
                 <Link to="/signin" className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out">{t("Sign in")}</Link>
               </li>

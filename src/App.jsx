@@ -1,20 +1,12 @@
-import React, { useEffect } from 'react';
-import {
-  Routes,
-  Route,
-  useLocation
-} from 'react-router-dom';
+import React, {useEffect} from 'react';
+import {useLocation} from 'react-router-dom';
 import 'aos/dist/aos.css';
 import './css/style.css';
 import AOS from 'aos';
 import i18n from './i18n';
 import useLocalStorage from './hooks/useLocalStorage';
 import 'react-toastify/dist/ReactToastify.css';
-import Home from './pages/Home';
-import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
-import ResetPassword from './pages/ResetPassword';
-import Check from './pages/Сheck';
+import AppRouter from './components/AppRouter';
 
 function App() {
   const location = useLocation();
@@ -41,13 +33,7 @@ function App() {
 
   return (
     <>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/check" element={<Check />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
-      </Routes>
+      <AppRouter />
     </>
   );
 }
