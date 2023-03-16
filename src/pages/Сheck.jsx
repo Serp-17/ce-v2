@@ -38,50 +38,47 @@ const Check = () => {
     }
 
     return (
-        <div className="flex flex-col min-h-screen overflow-hidden">
-            <Header />
-            <main className="grow">
-                <div className="relative max-w-6xl mx-auto h-0 pointer-events-none" aria-hidden="true">
-                    <PageIllustration />
-                </div>
-                <section>
-                    <div className="max-w-6xl mx-auto px-4 sm:px-6 h-screen mt-[25%]">
-                        {/* CTA box */}
-                        <div className="relative bg-purple-600 py-10 px-8 md:py-16 md:px-12" data-aos="fade-up">
+        <>
+            <div className="relative max-w-6xl mx-auto h-0 pointer-events-none" aria-hidden="true">
+                <PageIllustration />
+            </div>
+            <section>
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 h-screen mt-[25%]">
+                    {/* CTA box */}
+                    <div className="relative bg-purple-600 py-10 px-8 md:py-16 md:px-12" data-aos="fade-up">
 
-                            {loading && <Bars
-                                height="80"
-                                width="80"
-                                color="#4b4acf"
-                                ariaLabel="bars-loading"
-                                wrapperStyle={{}}
-                                wrapperClass="loader"
-                                visible={true}
-                            />}
+                        {loading && <Bars
+                            height="80"
+                            width="80"
+                            color="#4b4acf"
+                            ariaLabel="bars-loading"
+                            wrapperStyle={{}}
+                            wrapperClass="loader"
+                            visible={true}
+                        />}
 
-                            <div className="relative flex flex-col lg:flex-row justify-between items-center mb-6">
-                                <form className="w-full mx-auto" onSubmit={handleSubmit(onSubmit)}>
-                                    <div className="flex flex-col sm:flex-row justify-center max-w-xs mx-auto sm:max-w-md lg:max-w-none mx-auto mb-3">
-                                        <div className="flex mb-2 sm:mb-0 mr-0 sm:mr-2 check-input">
-                                            <Input
-                                                type="number"
-                                                placeholder="Your id"
-                                                name="id"
-                                                register={register}
-                                                onBlur={() => {}}
-                                                // label="You send"
-                                            />
-                                        </div>
-                                        <button type="submit" className="btn text-purple-600 bg-purple-100 hover:bg-white shadow">{t("Check")}</button>
+                        <div className="relative flex flex-col lg:flex-row justify-between items-center mb-6">
+                            <form className="w-full mx-auto" onSubmit={handleSubmit(onSubmit)}>
+                                <div className="flex flex-col sm:flex-row justify-center max-w-xs mx-auto sm:max-w-md lg:max-w-none mx-auto mb-3">
+                                    <div className="flex mb-2 sm:mb-0 mr-0 sm:mr-2 check-input">
+                                        <Input
+                                            type="number"
+                                            placeholder="Your id"
+                                            name="id"
+                                            register={register}
+                                            onBlur={() => {}}
+                                            // label="You send"
+                                        />
                                     </div>
-                                </form>
-                            </div>
-                            {info && <Status {...info} id={id} />}
+                                    <button type="submit" className="btn text-purple-600 bg-purple-100 hover:bg-white shadow">{t("Check")}</button>
+                                </div>
+                            </form>
                         </div>
+                        {info && <Status {...info} id={id} />}
                     </div>
-                </section>
-            </main>
-        </div>
+                </div>
+            </section>
+        </>
     )
 }
 

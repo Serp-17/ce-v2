@@ -41,6 +41,11 @@ function CustomSelect (props) {
                   ...provided,
                   color: '#fff',
                 }),
+                option: (provided, { data, isDisabled, isFocused, isSelected }) => ({
+                    ...provided,
+                    backgroundColor: isSelected ? "#fff" : "#fff",
+                    color: "#5d5dff"
+                })
             }}
             defaultValue={defaultValue}
             components={{

@@ -5,6 +5,7 @@ import './css/style.css';
 import AOS from 'aos';
 import 'react-toastify/dist/ReactToastify.css';
 import AppRouter from './components/AppRouter';
+import Header from "./partials/Header";
 
 function App() {
   const location = useLocation();
@@ -25,9 +26,12 @@ function App() {
   }, [location.pathname]); // triggered on route change
 
   return (
-    <>
-      <AppRouter />
-    </>
+      <div className="flex flex-col min-h-screen overflow-hidden">
+        <Header />
+        <main className="grow">
+          <AppRouter />
+        </main>
+      </div>
   );
 }
 
