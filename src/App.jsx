@@ -3,18 +3,11 @@ import {useLocation} from 'react-router-dom';
 import 'aos/dist/aos.css';
 import './css/style.css';
 import AOS from 'aos';
-import i18n from './i18n';
-import useLocalStorage from './hooks/useLocalStorage';
 import 'react-toastify/dist/ReactToastify.css';
 import AppRouter from './components/AppRouter';
 
 function App() {
   const location = useLocation();
-  const [language, setLanguage] = useLocalStorage('language', 'ru');
-  const handleLanguageChange = (val) => {
-    i18n.changeLanguage(val);
-    setLanguage(val);
-  };
 
   useEffect(() => {
     AOS.init({
