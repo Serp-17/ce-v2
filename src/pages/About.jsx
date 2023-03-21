@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Rules = () => {
+const About = () => {
     return (
         <div>
             Rules
@@ -8,4 +8,4 @@ const Rules = () => {
     );
 };
 
-export default Rules;
+export default About;

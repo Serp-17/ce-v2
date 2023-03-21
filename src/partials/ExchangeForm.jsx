@@ -149,7 +149,7 @@ const ExchangeForm = observer(() => {
                                                 placeholder=""
                                                 name="getWallet"
                                                 register={register}
-                                                label={`Your ${getValues("sendCoin")} wallet`}
+                                                label={`${t("Your")} ${getValues("sendCoin")} ${t("wallet")}`}
                                             />
                                         </div>
                                         <div className="flex mb-2 sm:mb-0 mr-0 sm:mr-2 max-w-[314px] w-full">
@@ -158,7 +158,7 @@ const ExchangeForm = observer(() => {
                                                 placeholder=""
                                                 name="sendWallet"
                                                 register={register}
-                                                label={`Your ${getValues("getCoin")} wallet`}
+                                                label={`${t("Your")} ${getValues("getCoin")} ${t("wallet")}`}
                                             />
                                         </div>
                                     </div>
@@ -170,7 +170,7 @@ const ExchangeForm = observer(() => {
                                                 placeholder="name@gail.com"
                                                 name="email"
                                                 register={register}
-                                                label="Your E-mail"
+                                                label={`${t("Your")} E-mail`}
                                             />
                                         </div>
                                         <div className="flex mb-2 sm:mb-0 mr-0 sm:mr-2 max-w-[314px] w-full">
@@ -179,7 +179,7 @@ const ExchangeForm = observer(() => {
                                                 placeholder=""
                                                 name="promoCode"
                                                 register={register}
-                                                label="Promo code"
+                                                label={t("Promo code")}
                                             />
                                         </div>
                                     </div>

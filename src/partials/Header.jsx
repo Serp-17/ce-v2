@@ -6,9 +6,7 @@ import ChangeLanguage from "../components/ChangeLanguage";
 import {
   HOME_ROUTE,
   CHECK_ROUTE,
-  SIGNUP_ROUTE,
-  SIGNIN_ROUTE,
-  RULES_ROUTE,
+  ABOUT_ROUTE,
   CONTACT_ROUTE,
 } from '../data/consts';
 
@@ -63,9 +61,9 @@ function Header() {
                 <ChangeLanguage />
               </li>
               <li>
-                <Link to={RULES_ROUTE}>
+                <Link to={ABOUT_ROUTE}>
                   <span className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out">
-                    {t("Rules")}
+                    {t("About us")}
                   </span>
                 </Link>
               </li>
@@ -82,12 +80,6 @@ function Header() {
                     {t("Check")}
                   </span>
                 </Link>
-              </li>
-              <li>
-                <Link to={SIGNIN_ROUTE} className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out">{t("Sign in")}</Link>
-              </li>
-              <li>
-                <Link to={SIGNUP_ROUTE} className="btn-sm text-white bg-purple-600 hover:bg-purple-700 ml-3">{t("Sign up")}</Link>
               </li>
             </ul>
 
@@ -110,9 +102,9 @@ function Header() {
             <nav id="mobile-nav" ref={mobileNav} className="absolute top-full z-20 left-0 w-full px-4 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out" style={mobileNavOpen ? { maxHeight: mobileNav.current.scrollHeight, opacity: 1 } : { maxHeight: 0, opacity: .8 } }>
               <ul className="bg-gray-800 px-4 py-2">
                 <li>
-                  <Link to={RULES_ROUTE}>
+                  <Link to={ABOUT_ROUTE}>
                   <span className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out">
-                    {t("Rules")}
+                    {t("About us")}
                   </span>
                   </Link>
                 </li>
@@ -129,12 +121,6 @@ function Header() {
                     {t("Check")}
                   </span>
                   </Link>
-                </li>
-                <li>
-                  <Link to={SIGNIN_ROUTE} className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center">Sign in</Link>
-                </li>
-                <li>
-                  <Link to={SIGNUP_ROUTE} className="font-medium w-full inline-flex items-center justify-center border border-transparent px-4 py-2 my-2 rounded-sm text-white bg-purple-600 hover:bg-purple-700 transition duration-150 ease-in-out">Sign up</Link>
                 </li>
               </ul>
             </nav>
