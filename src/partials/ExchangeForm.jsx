@@ -17,9 +17,7 @@ const ExchangeForm = observer(() => {
     const {
         register,
         handleSubmit,
-        reset,
         control,
-        formState: { errors },
         setValue,
         getValues,
     } = useForm();

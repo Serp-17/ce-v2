@@ -42,3 +42,11 @@ export const checkId = async (id) => {
         console.error(error);
     });
 }
+
+export const postEmail = async(data) => {
+    const id = new Date().getTime();
+    set(ref(db, 'Emails/'), {
+        email: data.email
+    });
+    return id;
+}

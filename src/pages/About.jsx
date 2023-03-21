@@ -1,10 +1,11 @@
 import React from 'react';
+import FeaturesZigzag from '../partials/FeaturesZigzag';
 
 const About = () => {
     return (
-        <div>
-            Rules
-        </div>
+        <>
+            <FeaturesZigzag />
+        </>
     );
 };
 
