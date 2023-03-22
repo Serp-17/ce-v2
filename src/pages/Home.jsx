@@ -12,7 +12,7 @@ function Home() {
       <div className="relative max-w-6xl mx-auto h-0 pointer-events-none" aria-hidden="true">
         <PageIllustration />
       </div>
-      <div className="h-auto md-h-screen">
+      <div className="h-auto md-h-screen mt-8">
         <FeaturesTitleBlocks />
         <ExchangeForm />
       </div>

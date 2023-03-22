@@ -43,7 +43,13 @@ const Check = () => {
                 <PageIllustration />
             </div>
             <section>
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 h-screen mt-[25%]">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 h-screen mt-[10%]">
+                    <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
+                        <h1 className="h2 mb-4">{t("Check your order")}</h1>
+                        <p className="text-xl text-gray-400">
+                            {t("Here you can track your order by track number.")}
+                        </p>
+                    </div>
                     {/* CTA box */}
                     <div className="relative bg-purple-600 py-10 px-8 md:py-16 md:px-12" data-aos="fade-up">
 
