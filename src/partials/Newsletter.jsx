@@ -8,12 +8,14 @@ function Newsletter() {
   const {t} = useTranslation();
   const {
     register,
-    handleSubmit
+    handleSubmit,
+    reset
   } = useForm();
 
   const onSubmit = (data) => {
     postEmail(data).then(() => {
       toast(t("Successfully"));
+      reset();
     })
   }
 

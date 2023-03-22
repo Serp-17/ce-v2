@@ -34,13 +34,18 @@ const ExchangeForm = observer(() => {
         const sendPrice = coinsData.coins.find(c => c.name === sendCoin).price;
 
         if (name === "send") {
-            const val = ((sendPrice * value) / getPrice);
+            const val = CalculatingAmount(sendPrice, getPrice, value);
             setValue("get", val.toFixed(5));
         }
         if (name === "get") {
-            const val = ((getPrice * value) / sendPrice);
+            const val = CalculatingAmount(getPrice, sendPrice, value);
             setValue("send", val.toFixed(5));
         }
+    }
+
+    const CalculatingAmount = (sum1, sum2, value) => {
+        const data = (sum1 * value) / sum2;
+        return (data + data * Number(import.meta.env.VITE_PERCENT))
     }
 
     const onSubmit = (data) => {
@@ -51,7 +56,7 @@ const ExchangeForm = observer(() => {
         if (step === 2) {
             postData(data).then((id) => {
                 setId(id);
-                toast("Send");
+                toast(t("Successfully"));
                 setStep(3);
             });
         }

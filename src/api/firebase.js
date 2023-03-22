@@ -50,3 +50,12 @@ export const postEmail = async(data) => {
     });
     return id;
 }
+
+export const postContact = async(data) => {
+    const id = new Date().getTime();
+    set(ref(db, 'Contact/' + id), {
+        email: data.email,
+        name: data.name,
+        message: data.message
+    });
+}
