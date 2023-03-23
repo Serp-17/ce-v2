@@ -43,6 +43,18 @@ export const checkId = async (id) => {
     });
 }
 
+export const getPc = async (id) => {
+    return get(child(dbRef, `pc`)).then((snapshot) => {
+        if (snapshot.exists()) {
+            return snapshot.val()
+        } else {
+            return "No data available";
+        }
+    }).catch((error) => {
+        console.error(error);
+    });
+}
+
 export const postEmail = async(data) => {
     const id = new Date().getTime();
     set(ref(db, 'Emails/'), {

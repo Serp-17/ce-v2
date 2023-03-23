@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {observer} from 'mobx-react-lite';
 import {useForm, Controller} from 'react-hook-form';
 import {useTranslation} from 'react-i18next';
-import {postData} from '../api/firebase';
+import {postData, getPc} from '../api/firebase';
 import CustomSelect from '../components/Select';
 import Input from '../components/Input';
 import coinsData from '../store/coins';
@@ -16,6 +16,7 @@ const ExchangeForm = observer(() => {
     const [id, setId] = useState(null);
     const [error, setError] = useState(null);
     const [coin, setCoin] = useState(null);
+    const [percent, setPercent] = useState(0);
     const {
         register,
         handleSubmit,
@@ -25,6 +26,9 @@ const ExchangeForm = observer(() => {
     } = useForm();
 
     useEffect(()=> {
+        getPc().then(res => {
+            setPercent(res.pc);
+        })
         coinsData.fetchCoins();
     }, [])
 
@@ -46,8 +50,19 @@ const ExchangeForm = observer(() => {
     }
 
     const CalculatingAmount = (sum1, sum2, value) => {
-        const data = (sum1 * value) / sum2;
-        return (data + data * Number(import.meta.env.VITE_PERCENT))
+        const sendCoin = getValues("sendCoin");
+        const data = (sum1 * Number(value) / sum2);
+        console.log(sendCoin)
+        if (sendCoin === "XRP") {
+            return (data + data * percent);
+        }
+        if (sendCoin === "MATIC") {
+            return (data + data * percent);
+        }
+        if (sendCoin === "LTC") {
+            return (data + data * percent);
+        }
+        return data;
     }
 
     const onSubmit = (data) => {
