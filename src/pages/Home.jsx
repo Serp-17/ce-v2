@@ -9,9 +9,9 @@ function Home() {
   return (
     <>
       <div className="relative max-w-6xl mx-auto h-0 pointer-events-none" aria-hidden="true">
-        <PageIllustration />
+        {/*<PageIllustration />*/}
       </div>
-      <div className="h-auto md-h-screen mt-8">
+      <div className="flex items-center h-auto lg:h-screen mt-8">
         <FeaturesTitleBlocks />
         <ExchangeForm />
       </div>
