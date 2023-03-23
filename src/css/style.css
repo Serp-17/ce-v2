@@ -52,3 +52,11 @@ input {
     left: 0;
     z-index: 9999;
 }
+
+#sendCoin, #getCoin {
+    height: 50px;
+}
+
+button {
+    max-height: 50px;
+}

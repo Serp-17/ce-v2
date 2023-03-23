@@ -15,7 +15,7 @@ function FeaturesZigzag() {
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
             <h1 className="h2 mb-4">{t("About us")}</h1>
             <p className="text-xl text-gray-400">
-              Name{t("aboutUs.subTitle")}
+              {window.location.host} {t("aboutUs.subTitle")}
             </p>
           </div>
 

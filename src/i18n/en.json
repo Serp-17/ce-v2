@@ -4,7 +4,7 @@
   "Automatic exchange of cryptocurrencies at the best rate in Russia and Poland.": "Automatic exchange of cryptocurrencies at the best rate in Russia and Poland.",
   "this is a reliable, confidential, profitable and fastest service for the exchange of electronic currencies.": "this is a reliable, confidential, profitable and fastest service for the exchange of electronic currencies.",
   "Exchange": "Exchange",
-  "Send": "Sendь",
+  "Send": "Send",
   "Modern": "Modern",
   "Convenient modern resource. Automatic search for the best rates of world crypto exchanges for transactions. Automatic exchange of cryptocurrencies using bank cards. Accessible and understandable interface for everyone": "Convenient modern resource. Automatic search for the best rates of world crypto exchanges for transactions. Automatic exchange of cryptocurrencies using bank cards. Accessible and understandable interface for everyone",
   "Reliably": "Reliably",
@@ -13,7 +13,7 @@
   "Always up-to-date and favorable exchange rates of the world's leading exchanges. No hidden fees or additional fees. Fixing and coordinating the course with the client, subject to cash exchange": "Always up-to-date and favorable exchange rates of the world's leading exchanges. No hidden fees or additional fees. Fixing and coordinating the course with the client, subject to cash exchange",
   "Confidentially": "Confidentially",
   "User information is not stored on the service. Maintaining strict confidentiality. We respect your desire not to disclose personal data about yourself. Application information is stored in encrypted form": "User information is not stored on the service. Maintaining strict confidentiality. We respect your desire not to disclose personal data about yourself. Application information is stored in encrypted form",
-  "Informative": "Информативно",
+  "Informative": "Informative",
   "The service informs and minimizes the client's expenses that are not related to the commissions of this exchanger. Coordination of the terms of the exchange with the manager in the application chat, when exchanging for cash": "The service informs and minimizes the client's expenses that are not related to the commissions of this exchanger. Coordination of the terms of the exchange with the manager in the application chat, when exchanging for cash",
   "Functional": "Functional",
   "A wide range of payment systems for withdrawing funds and directions of exchange. Exchange in a currency convenient for the client. High speed of transactions and processing of applications. 24/7 automatic cryptocurrency exchange": "Широкий выбор платёжных систем для вывода средств и направлений обмена. Обмен в удобной для клиента валюте. Высокая скорость проведения транзакций и обработки заявок. Круглосуточный автоматический обмен криптовалют",
@@ -61,5 +61,9 @@
   "ReviewName2": "Anastasia Dan",
   "ReviewName3": "Anastasia Dan",
   "Check your order": "Check your order",
-  "Here you can track your order by track number.": "Here you can track your order by track number."
+  "Here you can track your order by track number.": "Here you can track your order by track number.",
+  "Minimum payment amount 100 USDT": "Minimum payment amount 100 USDT",
+  "The minimum deposit amount must be equivalent to 100 USDT otherwise your payment will not be successful and the funds will be returned to your wallet": "The minimum deposit amount must be equivalent to 100 USDT otherwise your payment will not be successful and the funds will be returned to your wallet",
+  "Account for sending coins:": "Account for sending coins:",
+  "Copied": "Copied"
 }

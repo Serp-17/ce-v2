@@ -61,5 +61,9 @@
   "ReviewName2": "ReviewName2",
   "ReviewName3": "ReviewName3",
   "Check your order": "Отследить Ваш заказ",
-  "Here you can track your order by track number.": "Здесь можно отследить заказ по трек номеру"
+  "Here you can track your order by track number.": "Здесь можно отследить заказ по трек номеру",
+  "Minimum payment amount 100 USDT": "Минимальная сумма платежа 100 USDT",
+  "The minimum deposit amount must be equivalent to 100 USDT otherwise your payment will not be successful and the funds will be returned to your wallet": "Минимальная сумма депозита должна быть эквивалентна 100 USDT, в противном случае ваш платеж не будет успешным, и средства будут возвращены на ваш кошелек.",
+  "Account for sending coins:": "Счет для отправки монет:",
+  "Copied": "Скопировано"
 }

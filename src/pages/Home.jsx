@@ -3,7 +3,6 @@ import PageIllustration from '../partials/PageIllustration';
 import ExchangeForm from '../partials/ExchangeForm';
 import FeaturesTitleBlocks from '../partials/FeaturesTitleBlocks';
 import FeaturesBlocks from '../partials/FeaturesBlocks';
-import Testimonials from '../partials/Testimonials';
 import Newsletter from '../partials/Newsletter';
 
 function Home() {
@@ -17,7 +16,6 @@ function Home() {
         <ExchangeForm />
       </div>
       <FeaturesBlocks />
-      <Testimonials />
       <Newsletter />
     </>
   );

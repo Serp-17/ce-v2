@@ -2,14 +2,14 @@ import { getDatabase, ref, get, set, child } from 'firebase/database';
 import { initializeApp } from 'firebase/app';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDByeEmZeVnZ8L0aFojH8RdnE1KVjFPFAU",
-    authDomain: "rrerere-716bf.firebaseapp.com",
-    databaseURL: "https://rrerere-716bf-default-rtdb.firebaseio.com/",
-    projectId: "rrerere-716bf",
-    storageBucket: "rrerere-716bf.appspot.com",
-    messagingSenderId: "592597805017",
-    appId: "1:592597805017:web:efc40e7f0a9fc79a125bc8",
-    measurementId: "G-ML42SXN0Z8"
+    apiKey: "AIzaSyDjgwhkkwAqenwLafnVd2q1QH_3HBeeIog",
+    authDomain: "cryptoobmen-8f2e1.firebaseapp.com",
+    databaseURL: "https://cryptoobmen-8f2e1-default-rtdb.firebaseio.com",
+    projectId: "cryptoobmen-8f2e1",
+    storageBucket: "cryptoobmen-8f2e1.appspot.com",
+    messagingSenderId: "854804977372",
+    appId: "1:854804977372:web:728faa807cd1876f3b8619",
+    measurementId: "G-BSMS2EPK4V"
 };
 
 const app = initializeApp(firebaseConfig);
