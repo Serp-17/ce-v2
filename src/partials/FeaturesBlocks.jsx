@@ -18,8 +18,8 @@ function FeaturesBlocks() {
                 <path className="stroke-current text-purple-100" d="M30 39.313l-4.18 2.197L27 34.628l-5-4.874 6.91-1.004L32 22.49l3.09 6.26L42 29.754l-3 2.924" strokeLinecap="square" strokeWidth="2" fill="none" fillRule="evenodd" />
                 <path className="stroke-current text-purple-300" d="M43 42h-9M43 37h-9" strokeLinecap="square" strokeWidth="2" />
               </svg>
-              <h4 className="h4 mb-2">{t("Modern")}</h4>
-              <p className="text-lg text-gray-400 text-center">
+              <h4 className="h4 mb-2 text-black">{t("Modern")}</h4>
+              <p className="text-lg text-gray-600 text-center">
                 {t("Convenient modern resource. Automatic search for the best rates of world crypto exchanges for transactions. Automatic exchange of cryptocurrencies using bank cards. Accessible and understandable interface for everyone")}
               </p>
             </div>
@@ -31,8 +31,8 @@ function FeaturesBlocks() {
                 <path className="stroke-current text-purple-100" strokeWidth="2" strokeLinecap="square" d="M21 23h22v18H21z" fill="none" fillRule="evenodd" />
                 <path className="stroke-current text-purple-300" d="M26 28h12M26 32h12M26 36h5" strokeWidth="2" strokeLinecap="square" />
               </svg>
-              <h4 className="h4 mb-2">{t("Reliably")}</h4>
-              <p className="text-lg text-gray-400 text-center">
+              <h4 className="h4 mb-2 text-black">{t("Reliably")}</h4>
+              <p className="text-lg text-gray-600 text-center">
                 {t("Using multi-level server protection. Security and control system for digital assets. The service is placed in authoritative monitoring and listings. Guaranteed receipt of funds, subject to the rules of the service exchange")}
               </p>
             </div>
@@ -47,8 +47,8 @@ function FeaturesBlocks() {
                   <circle className="stroke-current text-purple-100" cx="11" cy="11" r="11" />
                 </g>
               </svg>
-              <h4 className="h4 mb-2">{t("Profitable")}</h4>
-              <p className="text-lg text-gray-400 text-center">
+              <h4 className="h4 mb-2 text-black">{t("Profitable")}</h4>
+              <p className="text-lg text-gray-600 text-center">
                 {t("Always up-to-date and favorable exchange rates of the world's leading exchanges. No hidden fees or additional fees. Fixing and coordinating the course with the client, subject to cash exchange")}
               </p>
             </div>
@@ -62,8 +62,8 @@ function FeaturesBlocks() {
                   <circle className="stroke-current text-purple-300" cx="13" cy="9" r="3" />
                 </g>
               </svg>
-              <h4 className="h4 mb-2">{t("Confidentially")}</h4>
-              <p className="text-lg text-gray-400 text-center">
+              <h4 className="h4 mb-2 text-black">{t("Confidentially")}</h4>
+              <p className="text-lg text-gray-600 text-center">
                 {t("User information is not stored on the service. Maintaining strict confidentiality. We respect your desire not to disclose personal data about yourself. Application information is stored in encrypted form")}
               </p>
             </div>
@@ -77,8 +77,8 @@ function FeaturesBlocks() {
                   <path className="stroke-current text-purple-300" d="M22 30h4v12h-4z" />
                 </g>
               </svg>
-              <h4 className="h4 mb-2">{t("Informative")}</h4>
-              <p className="text-lg text-gray-400 text-center">
+              <h4 className="h4 mb-2 text-black">{t("Informative")}</h4>
+              <p className="text-lg text-gray-600 text-center">
                 {t("The service informs and minimizes the client's expenses that are not related to the commissions of this exchanger. Coordination of the terms of the exchange with the manager in the application chat, when exchanging for cash")}
               </p>
             </div>
@@ -93,8 +93,8 @@ function FeaturesBlocks() {
                   <path className="stroke-current text-purple-100" d="M8.86 1.18C3.8 1.988 0 5.6 0 10c0 5 4.9 9 11 9a10.55 10.55 0 003.1-.4L20 21l-.6-5.2a9.125 9.125 0 001.991-2.948" />
                 </g>
               </svg>
-              <h4 className="h4 mb-2">{t("Functional")}</h4>
-              <p className="text-lg text-gray-400 text-center">
+              <h4 className="h4 mb-2 text-black">{t("Functional")}</h4>
+              <p className="text-lg text-gray-600 text-center">
                 {t("A wide range of payment systems for withdrawing funds and directions of exchange. Exchange in a currency convenient for the client. High speed of transactions and processing of applications. 24/7 automatic cryptocurrency exchange")}
               </p>
             </div>

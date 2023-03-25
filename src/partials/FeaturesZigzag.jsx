@@ -7,14 +7,14 @@ import FeatImage03 from '../images/features-03-image-03.png';
 function FeaturesZigzag() {
   const {t} = useTranslation();
   return (
-    <section>
+    <section id="about">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="py-12 md:py-20 border-t border-gray-800">
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">{t("About us")}</h1>
-            <p className="text-xl text-gray-400">
+            <h1 className="h2 mb-4 text-black">{t("About us")}</h1>
+            <p className="text-xl text-black">
               {window.location.host} {t("aboutUs.subTitle")}
             </p>
           </div>
@@ -31,12 +31,12 @@ function FeaturesZigzag() {
               {/* Content */}
               <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-right">
                 <div className="md:pr-4 lg:pr-12 xl:pr-16">
-                  <div className="font-architects-daughter text-xl text-purple-600 mb-2">More speed. Less spend</div>
-                  <h3 className="h3 mb-3">{t("Who are we?")}</h3>
-                  <p className="text-xl text-gray-400 mb-4">
+                  <div className="font-architects-daughter text-xl text-black mb-2">More speed. Less spend</div>
+                  <h3 className="h3 mb-3 text-black">{t("Who are we?")}</h3>
+                  <p className="text-xl text-black mb-4">
                     {t("whoAreWe.text1")}
                   </p>
-                  <p className="text-xl text-gray-400 mb-4">
+                  <p className="text-xl text-black mb-4">
                     {t("whoAreWe.text2")}
                   </p>
                 </div>
@@ -52,10 +52,10 @@ function FeaturesZigzag() {
               {/* Content */}
               <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-left">
                 <div className="md:pl-4 lg:pl-12 xl:pl-16">
-                  <h3 className="h3 mb-3">
+                  <h3 className="h3 mb-3 text-black">
                     {t("History of development")}
                   </h3>
-                  <p className="text-xl text-gray-400 mb-4">
+                  <p className="text-xl text-black mb-4">
                     {t("historyOfDevelopment.text")}
                   </p>
                 </div>
@@ -71,13 +71,13 @@ function FeaturesZigzag() {
               {/* Content */}
               <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-right">
                 <div className="md:pr-4 lg:pr-12 xl:pr-16">
-                  <p className="text-xl text-gray-400 mb-4">
+                  <p className="text-xl text-black mb-4">
                     {t("text1")}
                   </p>
-                  <p className="text-xl text-gray-400 mb-4">
+                  <p className="text-xl text-black mb-4">
                     {t("text2")}
                   </p>
-                  <p className="text-xl text-gray-400 mb-4">
+                  <p className="text-xl text-black mb-4">
                     {t("text3")}
                   </p>
                 </div>

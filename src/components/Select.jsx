@@ -32,19 +32,19 @@ function CustomSelect (props) {
             styles={{
                 control: (baseStyles, state) => ({
                   ...baseStyles,
-                  backgroundColor: 'rgb(75 74 207)',
-                  borderColor: 'rgb(141 141 255)',
+                  backgroundColor: '#fff',
+                  borderColor: '#000',
                   height: '100%',
                   width: '100px'
                 }),
                 singleValue: (provided, state) => ({
                   ...provided,
-                  color: '#fff',
+                  color: '#000',
                 }),
                 option: (provided, { data, isDisabled, isFocused, isSelected }) => ({
                     ...provided,
                     backgroundColor: isSelected ? "#fff" : "#fff",
-                    color: "#5d5dff"
+                    color: "#000"
                 })
             }}
             defaultValue={defaultValue}

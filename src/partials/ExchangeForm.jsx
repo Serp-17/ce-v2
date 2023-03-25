@@ -90,7 +90,7 @@ const ExchangeForm = observer(() => {
             <div className="max-w-6xl mx-auto pr-16">
 
                 {/* CTA box */}
-                <div className="relative bg-purple-600 py-10 px-8 md:py-16 md:px-12" data-aos="fade-up">
+                <div className="relative py-10 px-8 md:py-16 md:px-12">
 
                     <div className="relative flex flex-col lg:flex-row justify-between items-center">
                         {/* CTA form */}
@@ -150,9 +150,9 @@ const ExchangeForm = observer(() => {
                                                 }}
                                             />
                                         </div>
-                                        { error && <div className="error text-white mt-2">{t("Minimum payment amount 100 USDT")}</div>}
+                                        { error && <div className="error text-black mt-2">{t("Minimum payment amount 100 USDT")}</div>}
                                     </div>
-                                    {step === 1 && <button type="submit" className="btn w-full text-purple-600 bg-purple-100 hover:bg-white shadow">{t("Exchange")}</button>}
+                                    {step === 1 && <button type="submit" className="btn w-full border-black text-black hover:bg-black hover:text-white shadow">{t("Exchange")}</button>}
                                 </div>
                             )}
 
